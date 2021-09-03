@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+ {% include 'navbar.html' %}
+
+{% include 'sidebar.html' %}
+
+{% block wrapper %}
+{% endblock  %}
+
+ {% include 'asidebarizq.html' %}
+
+ {% include 'footer.html'%}
+</div>
+<!-- ./wrapper -->
+{% block scripts %}
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+{% endblock %}
+</body>
+{% endblock %}
