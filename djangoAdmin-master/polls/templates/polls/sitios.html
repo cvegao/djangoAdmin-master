@@ -1,0 +1,28 @@
+{% extends 'maincontent.html' %}
+
+{% block  content %}
+<h1>Sitios</h1>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Dominio</th>
+      <th scope="col">Fecha Creacion</th>
+      <th scope="col">Cliente</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+  {% for sitio in sitios %}
+    <tr>
+      <td scope="row">{{ sitio.id }}</td>      
+      <td>{{sitio.domain_name}}</td>
+      <td>{{sitio.created_datetime}}</td>
+      <td>{{sitio.client}}</td>
+     
+     
+    </tr>
+     {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

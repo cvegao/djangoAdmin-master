@@ -1,0 +1,31 @@
+{% extends 'maincontent.html' %}
+
+{% block  content %}
+<h1>Oportunidad De Negocio</h1>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Fecha registro</th>
+      <th scope="col">Email</th>
+      <th scope="col">Sitio</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+  {% for lead in leads %}
+    <tr>
+      <td>{{lead.id}}</td>    
+      <td>{{lead.first_name}}</td>
+      <td>{{lead.last_name}}</td>
+      <td>{{lead.registered_datetime}}</td>
+      <td>{{lead.email}}</td>
+      <td>{{lead.site.domain_name}}</td>
+     
+    </tr>
+     {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

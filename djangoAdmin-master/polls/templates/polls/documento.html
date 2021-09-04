@@ -1,0 +1,29 @@
+{% extends 'maincontent.html' %}
+
+{% block  content %}
+<h1>Documentos</h1>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Monto</th>
+      <th scope="col">Fecha Modificacion</th>
+      <th scope="col">Cliente</th>
+   
+     
+    </tr>
+  </thead>
+  <tbody>
+  {% for doc in doctos %}
+    <tr>
+      <td>{{doc.id}}</td>    
+      <td>{{doc.amount}}</td>
+      <td>{{doc.charged_datetime}}</td>
+      <td>{{doc.client}}</td>
+     
+     
+    </tr>
+     {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

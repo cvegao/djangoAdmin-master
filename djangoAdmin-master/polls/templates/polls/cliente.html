@@ -1,5 +1,28 @@
 {% extends 'maincontent.html' %}
 
 {% block  content %}
-<h1>Este es un contenido modificado</h1>
+<h1>Clientes</h1>
+<table class="table table-striped " id="data">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for cliente in clientes %}
+    <tr>
+      <td scope="row">{{ cliente.id }}</td>      
+      <td>{{cliente.first_name}}</td>
+      <td>{{cliente.last_name}}</td>
+      <td>{{cliente.email}}</td>
+      <td>{{cliente.joined_datetime}}</td>
+     
+    </tr>
+     {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
