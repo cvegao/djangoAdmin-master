@@ -8,4 +8,5 @@ urlpatterns = [
     path('sitios/',views.sitios,name='sitios'),
     path('lead/',views.leads,name='lead'),
     path('doctos/',views.documentos,name='doctos'),
+    path('libros_publicadores/',views.libros_publicadores,name='libros_publicadores'),
 ]

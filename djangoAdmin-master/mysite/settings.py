@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -128,3 +129,25 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"), 
 ]
+
+JAZZMIN_SETTINGS = {
+
+    "site_title": "Proyecto Django Admin",
+     "site_header":'Admin Proyecto',
+     "site_logo":'img/avatar.png',
+     "welcome_sign":'Inicio de Sesion',
+    "topmenu_links": [
+        {"model": "polls.Client"},
+    ],
+     'icons':{
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        'polls.Client':'fas fa-user',
+        'polls.Site':'fas fa-at',
+        'polls.Documento':'fas fa-file-alt',
+        'polls.Lead':'far fa-handshake',
+     },
+ 
+
+}

@@ -54,3 +54,24 @@ class Documento(models.Model):
     class Meta:
         managed = False
         db_table = 'billing'
+
+class Libro(models.Model):
+    id = models.AutoField(primary_key=True)
+    titulo = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+    class Meta:
+        db_table = 'Libros'
+
+
+
+class Publicador(models.Model):
+    nombre = models.CharField(max_length=255)
+    libros = models.ManyToManyField(Libro, related_name="publicadores")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'Publicadores'

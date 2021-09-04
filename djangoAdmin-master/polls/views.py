@@ -40,3 +40,13 @@ def documentos(request):
 
     }
     return render(request, 'polls/documento.html',data)
+
+
+def libros_publicadores(request):
+    libros = Libro.objects.all()
+    publicadores =Publicador.objects.all()
+    data = {
+        'libros': libros,
+        'publicadores': publicadores,
+    }
+    return render(request, 'polls/libros_publicadores.html',data)
