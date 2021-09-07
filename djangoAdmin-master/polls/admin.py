@@ -11,4 +11,5 @@ admin.site.register(Client,ClientAdmin)
 admin.site.register(Site)
 admin.site.register(Lead)
 admin.site.register(Documento)
-
+admin.site.register(Libro)
+admin.site.register(Publicador)

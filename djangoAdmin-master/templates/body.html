@@ -28,7 +28,25 @@
                     autoWidth: false,
                     dom: 'lfrtBip',
                     buttons: [
-                     'copy', 'csv', 'excel', 'pdf', 'print'
+                     {
+        //Botón para Excel
+        extend: 'excel',
+        footer: true,
+        title: 'Archivo',
+        filename: 'Export_File',
+
+        //Aquí es donde generas el botón personalizado
+        text: '<button class="btn btn-success">Exportar a Excel <i class="fas fa-file-excel"></i></button>'
+      },
+           //Botón para PDF
+      {
+        extend: 'pdf',
+        footer: true,
+        title: 'Archivo PDF',
+        filename: 'Export_File_pdf',
+        text: '<button class="btn btn-danger">Exportar a PDF <i class="far fa-file-pdf"></i></button>'
+      }
+      
                      ]
                 });
             });
