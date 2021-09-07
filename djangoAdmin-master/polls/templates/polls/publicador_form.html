@@ -1,0 +1,59 @@
+{% extends 'maincontent.html' %}
+
+{% block  content %}
+<div class="container">
+        <form class="text-center my-5" method="POST" action="send_edit_publicador">
+        {% csrf_token %}
+            <input type="hidden" name="id" value="{{publicador.id}}">
+            <div class="mb-3">
+                <label for="publicador" class="form-label">Publicador: </label>
+                <input type="text" class="form-control" id="publicador" value="{{ publicador.nombre }}" name="nombre">
+            </div>
+            <div class="mb-3">
+                <label for="libros" class="form-label">Libros: </label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{ servicio.descripcion }}" placeholder="Ingrese Descripcion">
+            </div>
+            <div class="mb-3">
+                <a class="btn btn-primary" href="/ipalma/" role="button">volver</a>
+                <input type="submit" class="btn btn-success" value="Actualizar datos">
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}
+
+<div class="related-widget-wrapper">
+    <select name="libros" required="" id="id_libros" multiple="" data-select2-id="select2-data-id_libros"
+            tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+        {% for libro in lista_libros %}
+            <option value="{{ libro.id }}">{{ libro.nombre }}</option>
+        {% endfor %}
+    </select>
+    <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-1-wtqh"
+          style="width: 142px;"><span class="selection">
+        <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true"
+              aria-expanded="false" tabindex="-1" aria-disabled="false">
+            <ul class="select2-selection__rendered" id="select2-id_libros-container">
+                <li class="select2-selection__choice" title="Libro object (1)" data-select2-id="select2-data-4-kkdv">
+                    <button type="button" class="select2-selection__choice__remove" tabindex="-1" title="Remove item"
+                            aria-label="Remove item" aria-describedby="select2-id_libros-container-choice-apmi-1">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <span class="select2-selection__choice__display" id="select2-id_libros-container-choice-apmi-1">Libro object (1)</span></li><li class="select2-selection__choice" title="Libro object (2)" data-select2-id="select2-data-5-rzab"><button type="button" class="select2-selection__choice__remove" tabindex="-1" title="Remove item" aria-label="Remove item" aria-describedby="select2-id_libros-container-choice-n6ve-2"><span aria-hidden="true">×</span></button><span class="select2-selection__choice__display" id="select2-id_libros-container-choice-n6ve-2">Libro object (2)</span></li></ul><span class="select2-search select2-search--inline"><textarea class="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-label="Search" aria-describedby="select2-id_libros-container" placeholder="" style="width: 0.75em;"></textarea></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+
+        <a class="related-widget-wrapper-link add-related" id="add_id_libros" href="/admin/polls/libro/add/?_to_field=id&amp;_popup=1" title="Añadir otro libro"><img src="/static/admin/img/icon-addlink.svg" alt="Añadir"></a>
+
+</div>
+
+
+<ul class="select2-selection__rendered" id="select2-id_libros-container">
+    <li class="select2-selection__choice" title="Libro object (1)" data-select2-id="select2-data-4-kkdv">
+        <button type="button" class="select2-selection__choice__remove" tabindex="-1" title="Remove item"
+                aria-label="Remove item" aria-describedby="select2-id_libros-container-choice-apmi-1">
+            <span aria-hidden="true">×</span></button><span class="select2-selection__choice__display"
+                                                            id="select2-id_libros-container-choice-apmi-1">
+        Libro object (1)
+    </span>
+    </li>
+</ul>

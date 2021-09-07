@@ -35,7 +35,7 @@
       <th scope="col">libros</th>
       <th scope="col">created_at</th>
       <th scope="col">updated_at</th>
-      
+        <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -50,7 +50,18 @@
       </td>
       <td>{{publicador.created_at}}</td>
       <td>{{publicador.updated_at}}</td>
-     
+        <td>
+            <form action="{% url 'edit_publicador' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{publicador.id}}">
+                <button type="submit" class="btn btn-warning">Edit</button>
+            </form>
+            <form action="{% url 'delete_publicador' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{publicador.id}}">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </td>
     </tr>
      {% endfor %}
   </tbody>
